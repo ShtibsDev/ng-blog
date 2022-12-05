@@ -1,1 +1,173 @@
-/* You can add global styles to this file, and also import other style files */
+@import './styles/breakpoints.scss';
+
+$header-height: 60px;
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	padding-top: $header-height;
+	font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding: 0 16px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: #1976d2;
+	color: white;
+	font-weight: 600;
+
+	a {
+		color: white;
+
+		&:link {
+			text-decoration: none;
+		}
+		&:visited {
+			text-decoration: none;
+		}
+		&:hover {
+			text-decoration: none;
+		}
+		&:active {
+			text-decoration: none;
+		}
+	}
+
+	nav {
+		height: $header-height;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		h1 {
+			margin: 0 !important;
+		}
+
+		.links {
+			display: flex;
+			column-gap: 1.5rem;
+		}
+	}
+
+	app-expandable-section {
+		nav {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 16px;
+		}
+	}
+}
+
+footer {
+	text-align: center;
+}
+
+.pointer {
+	&:not(:disabled) {
+		cursor: pointer;
+	}
+}
+
+.row,
+.column {
+	display: flex;
+
+	&.space-between {
+		justify-content: space-between;
+	}
+
+	&.space-around {
+		justify-content: space-around;
+	}
+
+	&.space-evenly {
+		justify-content: space-evenly;
+	}
+}
+
+.row {
+	&.v-center {
+		align-items: center;
+	}
+
+	&.v-end {
+		align-items: end;
+	}
+
+	&.h-center {
+		justify-content: center;
+	}
+
+	&.h-end {
+		justify-content: end;
+	}
+}
+
+.column {
+	display: flex;
+	flex-direction: column;
+
+	&.h-center {
+		align-items: center;
+	}
+
+	&.h-end {
+		align-items: end;
+	}
+
+	&.v-center {
+		justify-content: center;
+	}
+
+	&.v-end {
+		justify-content: end;
+	}
+}
+
+.hide {
+	@media screen and (max-width: $mobile-max-breakpoint) {
+		&.mobile {
+			display: none;
+		}
+	}
+
+	@media screen and (max-width: $tablet-max-breakpoint) {
+		&.tablet {
+			display: none;
+		}
+	}
+
+	@media screen and (min-width: $desktop-min-breakpoint) {
+		&.desktop {
+			display: none;
+		}
+	}
+}
+
+.show-only {
+	@media screen and (min-width: $tablet-min-breakpoint) {
+		&.mobile {
+			display: none;
+		}
+	}
+}

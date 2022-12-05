@@ -1,0 +1,11 @@
+{
+	"printWidth": 200,
+	"bracketSameLine": true,
+	"editorconfig": true,
+	"endOfLine": "lf",
+	"jsxSingleQuote": true,
+	"semi": true,
+	"singleQuote": true,
+	"tabWidth": 2,
+	"useTabs": true
+}
